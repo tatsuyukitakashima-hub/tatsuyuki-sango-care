@@ -15,8 +15,8 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives import hashes
 
-PASSWORD   = 'erinalove'
-ITERATIONS = 250_000
+PASSWORD   = 'sekai-de-ichiban-erina-to-nanako'
+ITERATIONS = 600_000
 ROOT       = os.path.dirname(os.path.abspath(__file__))
 
 def path(*p):

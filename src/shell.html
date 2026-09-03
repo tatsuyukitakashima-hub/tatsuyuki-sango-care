@@ -115,7 +115,7 @@ button:disabled{ opacity:.55; cursor:default; }
       if(!crypto.subtle){
         msg.textContent = 'この環境では解錠できません。https:// で開いてください。';
       }else{
-        msg.textContent = silent ? '' : '合言葉が違います。ヒント：夫がいちばん言われたい9文字。';
+        msg.textContent = silent ? '' : '合言葉が違います。ヒント：辰幸が世界でいちばん好きなもの。ローマ字で、単語はハイフンでつないでください。';
         if(silent){ try{ localStorage.removeItem(KEY); }catch(e){} }
         else pw.select();
       }

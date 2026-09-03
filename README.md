@@ -2,13 +2,13 @@
 
 結婚記念日特別イベント用の一枚ものサイト。産後ケア施設のコーポレートサイト風に作った、**2026年9月20日（日）一日限り開設**の架空施設の案内ページ。
 
-**公開URL**: https://tatsuyukitakashima-hub.github.io/tatsuyuki-sango-care/ （合言葉 `erinalove`）
+**公開URL**: https://tatsuyukitakashima-hub.github.io/tatsuyuki-sango-care/ （合言葉 `sekai-de-ichiban-erina-to-nanako`）
 
 ## 合言葉は本物の鍵
 
 このリポジトリは public だが、**サイト本文と写真は暗号化された状態でしか置かれていない**。
 
-- 合言葉から **PBKDF2-HMAC-SHA256（25万回）** で256bitの鍵を導出
+- 合言葉から **PBKDF2-HMAC-SHA256（60万回）** で256bitの鍵を導出
 - サイト本文（写真を data URI で埋め込んだHTML全体）を **AES-256-GCM** で暗号化
 - 暗号文を base64 にして `index.html` に埋め込む
 - ブラウザ側で `crypto.subtle` を使って復号し、`document.write()` でページを差し替える
@@ -17,7 +17,9 @@
 
 一度入館すると合言葉が `localStorage` に保存され、次回以降は自動で解錠される。
 
-> **注意**: 合言葉は9文字の推測しやすい語で、暗号文とスクリプトは公開されている。本気で総当たりする相手は想定していない。身内向け以上の用途には使わないこと。
+合言葉は `sekai-de-ichiban-erina-to-nanako`（32文字）。申込フォームのQuestion 05「辰幸が世界でいちばん好きなものは？」の正解と同じ文言になっている。
+
+32文字の未知のパスフレーズを60万回のPBKDF2越しに総当たりするのは現実的でない。ただし文言のパターンを知っている相手には強度が落ちるので、他所で使い回さないこと。
 
 ## ファイル構成
 
