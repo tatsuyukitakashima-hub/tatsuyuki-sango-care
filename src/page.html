@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>タツユキ産後ケア</title>
+<meta name="description" content="結婚記念日特別開設。2026年9月20日、一日限りの産後ケア施設。">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Jost:wght@300;400;500&display=swap">
+<style>
+/* ============================================================
+   タツユキ産後ケア  ―  トークン
+   ============================================================ */
+:root{
+  --paper:      #F6F2ED;   /* 生成り */
+  --paper-2:    #FDFBF8;   /* 白練 */
+  --paper-3:    #EFE8E0;   /* 灰生成り */
+  --ink:        #332C29;   /* 墨 */
+  --ink-2:      #6B605A;   /* 薄墨 */
+  --ink-3:      #9C9089;   /* 鈍色 */
+  --rose:       #C2848C;   /* 桜鼠 */
+  --rose-soft:  #EEDDDD;
+  --sage:       #7F998C;   /* 白緑 */
+  --sage-soft:  #E0E7E1;
+  --gold:       #C7A97C;   /* 白茶 */
+  --vermilion:  #B5423A;   /* 朱 */
+  --rule:       #DED5CC;
+  --il-cloth:   #FBF6F1;   /* イラスト：おくるみ */
+  --il-eye:     #4A3F3A;
+  --shadow:     0 1px 2px rgba(51,44,41,.04), 0 8px 28px -14px rgba(51,44,41,.20);
+
+  --mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --gothic: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+  --latin:  "Jost", "Hiragino Sans", sans-serif;
+
+  --col: 940px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:     #211D1B;
+    --paper-2:   #2A2523;
+    --paper-3:   #332D2A;
+    --ink:       #EDE5DE;
+    --ink-2:     #B7ABA3;
+    --ink-3:     #8B807A;
+    --rose:      #DC9EA5;
+    --rose-soft: #3B2E30;
+    --sage:      #98B3A5;
+    --sage-soft: #2A3330;
+    --gold:      #D6B98C;
+    --vermilion: #E0685C;
+    --rule:      #453D39;
+    --il-cloth:  #DACEC5;
+    --il-eye:    #3A312D;
+    --shadow:    0 1px 2px rgba(0,0,0,.30), 0 10px 30px -16px rgba(0,0,0,.70);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:     #211D1B;
+  --paper-2:   #2A2523;
+  --paper-3:   #332D2A;
+  --ink:       #EDE5DE;
+  --ink-2:     #B7ABA3;
+  --ink-3:     #8B807A;
+  --rose:      #DC9EA5;
+  --rose-soft: #3B2E30;
+  --sage:      #98B3A5;
+  --sage-soft: #2A3330;
+  --gold:      #D6B98C;
+  --vermilion: #E0685C;
+  --rule:      #453D39;
+  --il-cloth:  #DACEC5;
+  --il-eye:    #3A312D;
+  --shadow:    0 1px 2px rgba(0,0,0,.30), 0 10px 30px -16px rgba(0,0,0,.70);
+  color-scheme: dark;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--gothic); font-size:15.5px; line-height:1.95;
+  font-feature-settings:"palt" 1;
+}
+img,svg{ max-width:100%; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--rose); outline-offset:3px; border-radius:3px; }
+@media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+/* ============================================================
+   共通パーツ
+   ============================================================ */
+.wrap{ width:min(100% - 40px, var(--col)); margin-inline:auto; }
+.eyebrow{
+  font-family:var(--latin); font-weight:400; font-size:11px;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--ink-3);
+  display:flex; align-items:center; gap:12px; margin:0 0 10px;
+}
+.eyebrow::after{ content:""; flex:1; height:1px; background:var(--rule); }
+h2.sec{
+  font-family:var(--mincho); font-weight:600; font-size:clamp(23px,3.4vw,31px);
+  letter-spacing:.06em; margin:0 0 6px; line-height:1.5; text-wrap:balance;
+}
+.sec-lead{ color:var(--ink-2); margin:0 0 34px; max-width:34em; font-size:14.5px; }
+section{ padding:clamp(52px,7vw,86px) 0; }
+section + section{ border-top:1px solid var(--rule); }
+.icon{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+
+/* ============================================================
+   ヘッダー
+   ============================================================ */
+header.site{
+  position:sticky; top:0; z-index:40;
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:blur(10px); border-bottom:1px solid var(--rule);
+}
+.bar{ display:flex; align-items:center; justify-content:space-between; gap:20px; height:60px; }
+.brand{ display:flex; align-items:baseline; gap:9px; font-family:var(--mincho); font-weight:600; letter-spacing:.1em; font-size:15px; }
+.brand span{ font-family:var(--latin); font-size:9.5px; letter-spacing:.2em; color:var(--ink-3); text-transform:uppercase; }
+nav.site{ display:flex; gap:22px; font-size:12.5px; letter-spacing:.06em; }
+nav.site a{ text-decoration:none; color:var(--ink-2); padding-bottom:2px; border-bottom:1px solid transparent; }
+nav.site a:hover{ color:var(--ink); border-bottom-color:var(--rose); }
+@media (max-width:860px){ nav.site{ display:none; } }
+
+/* ============================================================
+   ヒーロー
+   ============================================================ */
+.hero{ padding:clamp(40px,6vw,64px) 0 clamp(52px,7vw,80px); border-top:0; }
+.hero-grid{ display:grid; grid-template-columns:auto 1fr; gap:clamp(24px,5vw,56px); align-items:center; }
+.hero-vert{
+  writing-mode:vertical-rl; font-family:var(--mincho); font-weight:600;
+  font-size:clamp(26px,4.4vw,40px); letter-spacing:.24em; line-height:1.9;
+  height:min(56vw,360px); margin:0;
+}
+.hero-vert em{ font-style:normal; color:var(--rose); }
+.hero-body{ display:flex; flex-direction:column; gap:22px; }
+.hero-tag{
+  font-family:var(--latin); font-size:10.5px; letter-spacing:.26em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.hero-body p{ margin:0; max-width:30em; color:var(--ink-2); }
+.hero-facts{ display:flex; flex-wrap:wrap; gap:0; border-top:1px solid var(--rule); }
+.hero-facts div{ padding:14px 26px 14px 0; margin-right:26px; border-right:1px solid var(--rule); }
+.hero-facts div:last-child{ border-right:0; margin-right:0; padding-right:0; }
+.hero-facts dt{ font-family:var(--latin); font-size:10px; letter-spacing:.2em; color:var(--ink-3); text-transform:uppercase; }
+.hero-facts dd{ margin:2px 0 0; font-family:var(--mincho); font-size:17px; letter-spacing:.06em; }
+.hero-art{ display:block; width:100%; height:auto; }
+@media (max-width:760px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .hero-vert{ writing-mode:horizontal-tb; height:auto; letter-spacing:.12em; line-height:1.7; }
+}
+
+/* ============================================================
+   施設からのお知らせ
+   ============================================================ */
+.notice{ padding-top:0; border-top:0; }
+.notice-box{
+  border:1px solid var(--gold); border-radius:3px; background:var(--paper-2);
+  padding:clamp(22px,3.4vw,30px) clamp(20px,3.4vw,34px);
+  display:grid; grid-template-columns:auto 1fr; gap:0 22px; align-items:start;
+}
+.notice-box .mark{
+  font-family:var(--mincho); font-weight:600; font-size:11px; letter-spacing:.14em;
+  writing-mode:vertical-rl; color:var(--paper-2); background:var(--gold);
+  padding:11px 5px; border-radius:2px; grid-row:span 2;
+}
+.notice-box h3{
+  font-family:var(--mincho); font-weight:600; font-size:16.5px; letter-spacing:.06em;
+  margin:0 0 8px; line-height:1.7;
+}
+.notice-box p{ margin:0; font-size:13.5px; color:var(--ink-2); line-height:2; }
+.notice-box p + p{ margin-top:.9em; }
+.notice-box .sig{
+  margin-top:14px; font-family:var(--mincho); font-size:13px; color:var(--ink-3);
+  text-align:right; letter-spacing:.08em;
+}
+@media (max-width:560px){
+  .notice-box{ grid-template-columns:1fr; gap:14px; }
+  .notice-box .mark{ writing-mode:horizontal-tb; justify-self:start; padding:4px 12px; grid-row:auto; }
+}
+
+/* ============================================================
+   ビフォーアフター
+   ============================================================ */
+.ba{ display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(16px,3vw,32px); align-items:start; }
+.ba figure{ margin:0; display:flex; flex-direction:column; gap:14px; }
+.ba .shot{
+  position:relative; border-radius:3px; overflow:hidden; background:var(--paper-3);
+  aspect-ratio:4/5; box-shadow:var(--shadow);
+}
+.ba .shot img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ba .chip{
+  position:absolute; top:14px; left:14px; z-index:1;
+  font-family:var(--latin); font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+  padding:6px 13px; border-radius:2px; background:var(--ink); color:var(--paper);
+}
+.ba figure.after .chip{ background:var(--rose); }
+.ba figcaption h3{
+  font-family:var(--mincho); font-weight:600; font-size:16.5px; letter-spacing:.06em; margin:0 0 6px;
+}
+.ba figcaption p{ margin:0; font-size:13.5px; color:var(--ink-2); }
+.ba .arrow{ align-self:center; color:var(--rose); padding-top:22%; }
+.ba .arrow svg{ width:38px; height:38px; }
+.ba-note{ margin:26px 0 0; font-size:12.5px; color:var(--ink-3); }
+@media (max-width:700px){
+  .ba{ grid-template-columns:1fr; }
+  .ba .arrow{ justify-self:center; padding:0; transform:rotate(90deg); }
+}
+
+/* ============================================================
+   コンセプト / 施設概要
+   ============================================================ */
+.two{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(28px,5vw,60px); align-items:start; }
+@media (max-width:820px){ .two{ grid-template-columns:1fr; } }
+.concept p{ margin:0 0 1.1em; }
+.concept p:last-child{ margin-bottom:0; }
+.pull{
+  font-family:var(--mincho); font-size:19px; line-height:2.1; letter-spacing:.08em;
+  border-left:2px solid var(--rose); padding-left:20px; margin:0 0 26px;
+}
+dl.spec{ margin:0; border-top:1px solid var(--rule); }
+dl.spec > div{ display:grid; grid-template-columns:7.4em 1fr; gap:16px; padding:12px 0; border-bottom:1px solid var(--rule); }
+dl.spec dt{ font-size:12.5px; color:var(--ink-3); letter-spacing:.08em; padding-top:1px; }
+dl.spec dd{ margin:0; font-size:14px; }
+dl.spec dd small{ display:block; color:var(--ink-3); font-size:12px; line-height:1.8; }
+
+/* ============================================================
+   一日の流れ
+   ============================================================ */
+.note{
+  display:flex; gap:11px; align-items:flex-start;
+  background:var(--sage-soft); border-radius:3px; padding:14px 17px;
+  font-size:13px; color:var(--ink-2); margin:0 0 36px; line-height:1.85;
+}
+.note .icon{ flex:none; width:17px; height:17px; margin-top:4px; color:var(--sage); }
+.tl{ list-style:none; margin:0; padding:0; position:relative; }
+.tl::before{ content:""; position:absolute; left:calc(4.7em + 5px); top:8px; bottom:8px; width:1px; background:var(--rule); }
+.tl li{ display:grid; grid-template-columns:4.7em 34px 1fr; align-items:start; gap:0 14px; padding:0 0 26px; }
+.tl li:last-child{ padding-bottom:0; }
+.tl time{
+  font-family:var(--latin); font-weight:300; font-size:19px; letter-spacing:.02em;
+  font-variant-numeric:tabular-nums; color:var(--ink-2); padding-top:3px;
+}
+.tl .dot{
+  position:relative; z-index:1; width:11px; height:11px; margin:11px 0 0 0;
+  border-radius:50%; background:var(--paper); border:1.5px solid var(--rose);
+}
+.tl li.is-key .dot{ background:var(--rose); box-shadow:0 0 0 4px var(--rose-soft); }
+.tl .body h3{
+  font-family:var(--mincho); font-weight:600; font-size:16.5px; letter-spacing:.06em;
+  margin:0 0 3px; display:flex; align-items:center; gap:9px;
+}
+.tl .body h3 .icon{ width:19px; height:19px; color:var(--rose); flex:none; }
+.tl .body p{ margin:0; font-size:13.5px; color:var(--ink-2); max-width:38em; }
+.tl li.is-key .body{
+  background:var(--rose-soft); border-radius:3px; padding:15px 18px; margin-top:-13px;
+}
+.tl li.is-key .body h3{ color:var(--rose); }
+.tl li.is-key .body p{ color:var(--ink-2); }
+@media (max-width:560px){
+  .tl::before{ left:5px; }
+  .tl li{ grid-template-columns:34px 1fr; }
+  .tl time{ grid-column:2; padding-top:0; font-size:16px; }
+  .tl .dot{ grid-row:1; margin-top:6px; }
+  .tl .body{ grid-column:2; }
+}
+
+/* ============================================================
+   カード群
+   ============================================================ */
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(238px,1fr)); gap:20px; }
+.card{
+  background:var(--paper-2); border:1px solid var(--rule); border-radius:3px;
+  padding:24px 22px 26px; display:flex; flex-direction:column; gap:9px;
+}
+.card .icon{ width:26px; height:26px; color:var(--sage); }
+.card h3{ font-family:var(--mincho); font-weight:600; font-size:16px; letter-spacing:.06em; margin:2px 0 0; }
+.card p{ margin:0; font-size:13.5px; color:var(--ink-2); }
+.card .tagline{ font-family:var(--latin); font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); }
+.card.accent{ background:var(--rose-soft); border-color:transparent; }
+.card.accent .icon{ color:var(--rose); }
+
+/* ============================================================
+   料金表
+   ============================================================ */
+.table-scroll{ overflow-x:auto; }
+table.fee{ width:100%; border-collapse:collapse; font-size:14px; min-width:520px; }
+table.fee th, table.fee td{ text-align:left; padding:14px 16px 14px 0; border-bottom:1px solid var(--rule); vertical-align:top; }
+table.fee thead th{
+  font-family:var(--latin); font-weight:400; font-size:10.5px; letter-spacing:.18em;
+  text-transform:uppercase; color:var(--ink-3); border-bottom:1px solid var(--ink-3); padding-bottom:9px;
+}
+table.fee td.amt{
+  font-family:var(--latin); font-weight:400; font-size:17px; font-variant-numeric:tabular-nums;
+  white-space:nowrap; color:var(--sage);
+}
+table.fee td small{ color:var(--ink-3); font-size:12px; }
+table.fee tfoot td, table.fee tfoot th{ border-bottom:0; padding-top:16px; }
+table.fee tfoot .amt{ font-size:22px; color:var(--rose); }
+table.fee tfoot th{ font-family:var(--mincho); font-size:15px; letter-spacing:.08em; }
+.fee-note{ font-size:12.5px; color:var(--ink-3); margin:16px 0 0; }
+
+/* ============================================================
+   申込フォーム
+   ============================================================ */
+.form-head{ text-align:center; margin-bottom:40px; }
+.form-head .eyebrow{ justify-content:center; }
+.form-head .eyebrow::after{ display:none; }
+.form-head h2{ margin-bottom:10px; }
+.form-head p{ color:var(--ink-2); max-width:32em; margin:0 auto; font-size:14.5px; }
+form#apply{ display:flex; flex-direction:column; gap:16px; }
+.q{
+  background:var(--paper-2); border:1px solid var(--rule); border-radius:3px;
+  padding:24px clamp(18px,3vw,28px) 26px;
+}
+.q-num{
+  font-family:var(--latin); font-weight:400; font-size:10.5px; letter-spacing:.2em;
+  color:var(--rose); text-transform:uppercase; display:block; margin-bottom:7px;
+}
+.q-title{
+  font-family:var(--mincho); font-weight:600; font-size:16.5px; line-height:1.75;
+  letter-spacing:.05em; margin:0 0 4px; text-wrap:balance;
+}
+.q-sub{ font-size:12.5px; color:var(--ink-3); margin:0 0 18px; }
+.opts{ display:flex; flex-direction:column; gap:8px; }
+.opt{
+  position:relative; display:flex; align-items:flex-start; gap:12px; cursor:pointer;
+  padding:12px 15px; border:1px solid var(--rule); border-radius:3px;
+  background:var(--paper); transition:border-color .15s, background .15s;
+}
+.opt:hover{ border-color:var(--rose); }
+.opt input{ position:absolute; opacity:0; width:0; height:0; }
+.opt .tick{
+  flex:none; width:15px; height:15px; margin-top:5px; border-radius:50%;
+  border:1.5px solid var(--ink-3); position:relative; transition:border-color .15s;
+}
+.opt input:checked ~ .tick{ border-color:var(--rose); }
+.opt input:checked ~ .tick::after{
+  content:""; position:absolute; inset:2.5px; border-radius:50%; background:var(--rose);
+}
+.opt:has(input:checked){ border-color:var(--rose); background:var(--rose-soft); }
+.opt input:focus-visible ~ .tick{ outline:2px solid var(--rose); outline-offset:3px; }
+.opt .txt{ font-size:14px; line-height:1.75; }
+.field label{ display:block; font-size:12.5px; color:var(--ink-3); letter-spacing:.08em; margin-bottom:8px; }
+.field input, .field textarea{
+  width:100%; font-family:var(--gothic); font-size:15px; color:var(--ink);
+  padding:12px 14px; border:1px solid var(--rule); border-radius:3px; background:var(--paper);
+}
+.field textarea{ resize:vertical; min-height:88px; line-height:1.8; }
+.submit{
+  align-self:center; font-family:var(--mincho); font-weight:600; font-size:15.5px;
+  letter-spacing:.2em; padding:16px 52px; margin-top:14px;
+  border:0; border-radius:2px; cursor:pointer; background:var(--ink); color:var(--paper);
+  transition:background .15s;
+}
+.submit:hover{ background:var(--rose); }
+.form-err{ text-align:center; color:var(--vermilion); font-size:13px; min-height:1.7em; margin:0; }
+
+/* ============================================================
+   審査結果
+   ============================================================ */
+#result{ display:none; }
+#result.show{ display:block; animation:rise .5s ease-out; }
+@keyframes rise{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.verdict{
+  background:var(--paper-2); border:1px solid var(--rule); border-radius:3px;
+  padding:clamp(30px,5vw,52px); position:relative; overflow:hidden;
+}
+.verdict-head{ display:flex; gap:26px; align-items:flex-start; flex-wrap:wrap; }
+.stamp{
+  flex:none; width:106px; height:106px; border-radius:50%;
+  border:3px double var(--vermilion); color:var(--vermilion);
+  display:grid; place-items:center; text-align:center;
+  font-family:var(--mincho); font-weight:800; letter-spacing:.08em; line-height:1.25;
+  transform:rotate(-8deg); opacity:.92;
+}
+.stamp span{ font-size:23px; display:block; }
+.stamp small{ font-family:var(--latin); font-size:8.5px; letter-spacing:.16em; display:block; margin-top:5px; }
+.verdict-head .vh{ flex:1; min-width:230px; }
+.verdict h3{
+  font-family:var(--mincho); font-weight:600; font-size:clamp(19px,2.8vw,25px);
+  letter-spacing:.06em; line-height:1.65; margin:0 0 14px; text-wrap:balance;
+}
+.verdict .msg{ margin:0; color:var(--ink-2); font-size:14.5px; line-height:2.05; }
+.score-rail{ margin:32px 0 0; }
+.score-rail .top{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px; }
+.score-rail .lbl{ font-family:var(--latin); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); }
+.score-rail .val{ font-family:var(--latin); font-weight:400; font-size:26px; font-variant-numeric:tabular-nums; }
+.score-rail .val b{ font-weight:400; color:var(--rose); }
+.score-rail .val i{ font-style:normal; font-size:14px; color:var(--ink-3); }
+.meter{ height:5px; background:var(--paper-3); border-radius:3px; overflow:hidden; }
+.meter i{ display:block; height:100%; background:var(--rose); border-radius:3px; transition:width .9s cubic-bezier(.2,.7,.3,1); }
+.remarks{ margin:30px 0 0; padding-top:24px; border-top:1px solid var(--rule); }
+.remarks h4{ font-family:var(--latin); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); margin:0 0 12px; font-weight:400; }
+.remarks ul{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:11px; }
+.remarks li{ font-size:13.5px; color:var(--ink-2); padding-left:18px; position:relative; line-height:1.9; }
+.remarks li::before{ content:"—"; position:absolute; left:0; color:var(--rose); }
+.again{
+  margin-top:26px; background:none; border:1px solid var(--rule); border-radius:2px;
+  font-family:var(--gothic); font-size:13px; letter-spacing:.1em; color:var(--ink-2);
+  padding:11px 26px; cursor:pointer;
+}
+.again:hover{ border-color:var(--rose); color:var(--rose); }
+
+/* ============================================================
+   フッター
+   ============================================================ */
+footer.site{ border-top:1px solid var(--rule); padding:44px 0 56px; text-align:center; }
+footer.site .brand{ justify-content:center; margin-bottom:12px; }
+footer.site p{ margin:0; font-size:12px; color:var(--ink-3); letter-spacing:.06em; line-height:2; }
+</style>
+</head>
+<body>
+
+<!-- ========== アイコンスプライト ========== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M10 2h4v2.4a2 2 0 0 0 .6 1.4l.8.8A3 3 0 0 1 16.3 8v11a3 3 0 0 1-3 3h-2.6a3 3 0 0 1-3-3V8a3 3 0 0 1 .9-2.1l.8-.8A2 2 0 0 0 10 3.7z"/><path d="M8 11h8M8 14.5h4"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-9 9 9 9 0 0 1-9-9z"/><path d="M9 7.5c0-1.5 1.3-1.8 1.3-3S9 2 9 2M14 7.5c0-1.5 1.3-1.8 1.3-3S14 2 14 2"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5S3.8 15.4 3.8 9.8A4.3 4.3 0 0 1 12 7.7a4.3 4.3 0 0 1 8.2 2.1c0 5.6-8.2 10.7-8.2 10.7z"/></symbol>
+    <symbol id="i-stroller" viewBox="0 0 24 24"><path d="M4 4h2l2.2 4.4"/><path d="M20 11a8 8 0 0 0-8-8v8z"/><path d="M4.4 11H20l-1.6 3.3a3 3 0 0 1-2.7 1.7H9.7a3 3 0 0 1-2.7-1.7z"/><circle cx="9" cy="19.5" r="1.8"/><circle cx="16.5" cy="19.5" r="1.8"/></symbol>
+    <symbol id="i-sushi" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.7"/><circle cx="12" cy="12" r="5.3"/><circle cx="12" cy="12" r="1.9"/></symbol>
+    <symbol id="i-cutlery" viewBox="0 0 24 24"><path d="M6.9 2.6v6.3a2.3 2.3 0 0 0 4.6 0V2.6M9.2 2.6v6.3M9.2 11.2v10.2"/><path d="M16.6 21.4v-7.8c2.6 0 4-2.3 4-5.6s-1.4-5.4-4-5.4z"/></symbol>
+    <symbol id="i-crepe" viewBox="0 0 24 24"><path d="M9 21.5 6 9.5h9l-3 12a1.6 1.6 0 0 1-3 0z"/><circle cx="8.6" cy="5.6" r="2.6"/><circle cx="14" cy="6.4" r="2.2"/><path d="M6 9.5h9"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 15.2A8.6 8.6 0 0 1 9.4 4.1a8.6 8.6 0 1 0 11.1 11.1z"/></symbol>
+    <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 10h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11.5h1.8a2.6 2.6 0 0 1 0 5.2H17"/><path d="M8 6.6c0-1.2 1-1.4 1-2.4S8 2.6 8 2.6M12.5 6.6c0-1.2 1-1.4 1-2.4s-1-1.6-1-1.6"/></symbol>
+    <symbol id="i-flower" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2.3"/><path d="M12 9.7c0-3 1-5.7 0-7.2-1 1.5 0 4.2 0 7.2zM12 14.3c0 3-1 5.7 0 7.2 1-1.5 0-4.2 0-7.2zM9.7 12c-3 0-5.7-1-7.2 0 1.5 1 4.2 0 7.2 0zM14.3 12c3 0 5.7 1 7.2 0-1.5-1-4.2 0-7.2 0z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M22 12h-2.4M4.4 12H2M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7M19.1 19.1l-1.7-1.7M6.6 6.6 4.9 4.9"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M12 11v5.4M12 7.7h.01"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="8" r="4.6"/><path d="M11.3 11.3 20 20M17 17l-2.2 2.2M19.4 14.6 17.2 16.8"/></symbol>
+    <symbol id="i-hands" viewBox="0 0 24 24"><path d="M12 21c-4 0-7.5-2.6-7.5-6V9.6a1.6 1.6 0 0 1 3.2 0v2.7"/><path d="M12 21c4 0 7.5-2.6 7.5-6V9.6a1.6 1.6 0 0 0-3.2 0v2.7"/><circle cx="12" cy="6" r="3.2"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========== 本編 ========== -->
+<div id="site">
+
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">タツユキ産後ケア <span>Est. 2026</span></div>
+    <nav class="site">
+      <a href="#about">施設について</a>
+      <a href="#effect">ケアの効果</a>
+      <a href="#day">一日の流れ</a>
+      <a href="#meal">お食事</a>
+      <a href="#option">おでかけ・特典</a>
+      <a href="#fee">ご利用料金</a>
+      <a href="#apply-sec">お申込み</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <h1 class="hero-vert">ママが、<em>ママを</em>お休みする日。</h1>
+    <div class="hero-body">
+      <p class="hero-tag">Tatsuyuki Postpartum Care — One Day Only</p>
+      <svg class="hero-art" viewBox="0 0 620 330" role="img" aria-label="窓辺の椅子で赤ちゃんを抱く父親と、湯気の立つカップのイラスト">
+        <defs>
+          <clipPath id="arch"><path d="M60 300V132a125 125 0 0 1 250 0v168z"/></clipPath>
+        </defs>
+        <!-- 窓のアーチ -->
+        <g clip-path="url(#arch)">
+          <rect x="60" y="0" width="250" height="300" fill="var(--rose-soft)"/>
+          <circle cx="238" cy="104" r="34" fill="var(--gold)" opacity=".55"/>
+          <path d="M60 232c46-26 74 8 118-12s72 6 132-16v96H60z" fill="var(--sage-soft)"/>
+        </g>
+        <path d="M60 300V132a125 125 0 0 1 250 0v168" fill="none" stroke="var(--rule)" stroke-width="2"/>
+        <!-- 床 -->
+        <path d="M20 300h580" stroke="var(--rule)" stroke-width="2" fill="none"/>
+        <!-- 椅子 -->
+        <path d="M352 300v-52a44 44 0 0 1 44-44h74a44 44 0 0 1 44 44v52" fill="var(--paper-3)"/>
+        <rect x="340" y="240" width="24" height="60" rx="12" fill="var(--paper-3)"/>
+        <rect x="502" y="240" width="24" height="60" rx="12" fill="var(--paper-3)"/>
+        <!-- 父 -->
+        <path d="M396 300v-70a37 37 0 0 1 74 0v70z" fill="var(--sage)"/>
+        <circle cx="433" cy="176" r="27" fill="var(--gold)"/>
+        <path d="M408 166a25 25 0 0 1 50 0 44 44 0 0 0-50 0z" fill="var(--ink)" opacity=".72"/>
+        <!-- 抱かれた赤ちゃん -->
+        <path d="M398 244c-6-20 8-34 26-34s30 14 26 32-16 24-28 24-20-8-24-22z" fill="var(--il-cloth)"/>
+        <circle cx="424" cy="234" r="15" fill="var(--rose)" opacity=".32"/>
+        <circle cx="419" cy="232" r="1.9" fill="var(--il-eye)"/>
+        <circle cx="430" cy="232" r="1.9" fill="var(--il-eye)"/>
+        <path d="M422 240c2 2 5 2 7 0" stroke="var(--il-eye)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <!-- 腕 -->
+        <path d="M400 226c-8 10-6 24 6 30" stroke="var(--sage)" stroke-width="13" fill="none" stroke-linecap="round"/>
+        <!-- サイドテーブルとカップ -->
+        <rect x="546" y="252" width="52" height="7" rx="3.5" fill="var(--paper-3)"/>
+        <rect x="552" y="259" width="6" height="41" fill="var(--paper-3)"/>
+        <rect x="586" y="259" width="6" height="41" fill="var(--paper-3)"/>
+        <path d="M556 228h30v14a15 15 0 0 1-15 15 15 15 0 0 1-15-15z" fill="var(--rose)"/>
+        <path d="M586 232h5a7 7 0 0 1 0 14h-5" stroke="var(--rose)" stroke-width="4" fill="none"/>
+        <path d="M565 218c0-6 5-7 5-12s-5-6-5-6M577 218c0-6 5-7 5-12s-5-6-5-6" stroke="var(--ink-3)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+        <!-- 植物 -->
+        <path d="M120 300v-42" stroke="var(--sage)" stroke-width="3" fill="none"/>
+        <path d="M120 268c-16-4-22-16-20-28 14 2 22 12 20 28zM120 276c15-6 20-18 17-30-13 3-20 14-17 30z" fill="var(--sage)"/>
+        <path d="M104 300h32l-4 0z" fill="none"/>
+        <path d="M103 274h34l-5 26h-24z" fill="var(--gold)" opacity=".85"/>
+      </svg>
+      <p>2026年9月20日、たった一日だけ開設される産後ケア施設です。菜々子様は施設長がお預かりし、瑛里奈様には「何もしなくていい時間」をご提供いたします。</p>
+      <dl class="hero-facts">
+        <div><dt>Date</dt><dd>9月20日（日）</dd></div>
+        <div><dt>Guest</dt><dd>瑛里奈様</dd></div>
+        <div><dt>Fee</dt><dd>0円</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- 施設からのお知らせ -->
+<section class="notice">
+  <div class="wrap">
+    <div class="notice-box">
+      <span class="mark">重要</span>
+      <div>
+        <h3>連休中の営業体制について</h3>
+        <p>平素より格別のご愛顧を賜り、誠にありがとうございます。このたび施設長（辰幸）におきまして、本シルバーウィーク期間中に<strong>資格取得のための学習期間</strong>が重なることが判明いたしました。</p>
+        <p>つきましては、当施設の開設は<strong>9月20日（日）の一日のみ</strong>とさせていただきます。同じ連休中でも、19日および21日以降は施設長が参考書とにらみ合っておりますので、当施設は営業しておりません。「20日があんな感じだったし、21日もいけるのでは」というご期待には、恐れ入りますが添いかねます。</p>
+        <p>なお、<strong>20日は資格の勉強を一切いたしません。</strong>参考書はその日だけ閉じております。安心してお預けください。</p>
+        <p class="sig">タツユキ産後ケア　施設長　辰幸</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 施設について -->
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">About the facility</p>
+    <h2 class="sec">施設について</h2>
+    <div class="two" style="margin-top:26px">
+      <div class="concept">
+        <p class="pull">お母さんを、<br>一日だけ辞めてみませんか。</p>
+        <p>タツユキ産後ケアは、結婚記念日を記念して一日限りで開設される、完全予約制・定員1名の産後ケア施設です。授乳以外のすべての育児業務——離乳食、ミルク、寝かしつけ、夜間対応——を施設長が引き受けます。</p>
+        <p>お預かりするのは菜々子様。ケアの対象は瑛里奈様です。当日は起きる時間も、二度寝も、外出も、すべて瑛里奈様のご自由です。予定はありますが、守らなくても誰も困りません。</p>
+        <p>なお当施設は、開設から閉鎖まで24時間以内という、極めて短命な施設でございます。次回の開設は未定です。</p>
+      </div>
+      <div>
+        <dl class="spec">
+          <div><dt>施設名</dt><dd>タツユキ産後ケア</dd></div>
+          <div><dt>開設日</dt><dd>2026年9月20日（日）<small>シルバーウィーク特別開設・一日限り</small></dd></div>
+          <div><dt>所在地</dt><dd>有明（ご自宅）<small>お部屋・共用スペース・有明ガーデン周辺</small></dd></div>
+          <div><dt>ご利用対象</dt><dd>瑛里奈様　1名<small>他のお客様のご予約は受け付けておりません</small></dd></div>
+          <div><dt>お預かり</dt><dd>菜々子様　1名</dd></div>
+          <div><dt>スタッフ</dt><dd>辰幸　1名<small>施設長／専属ケアスタッフ／夜勤担当を兼務</small></dd></div>
+          <div><dt>ご利用時間</dt><dd>7:00 〜 翌朝<small>夜間はスタッフが常駐いたします</small></dd></div>
+          <div><dt>開設趣旨</dt><dd>結婚記念日特別イベント</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ビフォーアフター -->
+<section id="effect">
+  <div class="wrap">
+    <p class="eyebrow">Before &amp; After</p>
+    <h2 class="sec">ご利用前後の変化</h2>
+    <p class="sec-lead">当施設が一日をかけて目指しているものは、突きつめると顔ひとつです。</p>
+    <div class="ba">
+      <figure class="before">
+        <div class="shot">
+          <span class="chip">Before</span>
+          <img src="assets/before.jpg" alt="ご利用前：ベッドで菜々子様と並んで横たわる瑛里奈様">
+        </div>
+        <figcaption>
+          <h3>ご利用前</h3>
+          <p>24時間営業。夜中に何度も起こされ、自分が笑っているのか力尽きているのか、本人にもよく分からなくなった状態です。ちなみにこの直後、また起こされました。</p>
+        </figcaption>
+      </figure>
+      <div class="arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h17M14 6l6 6-6 6"/></svg>
+      </div>
+      <figure class="after">
+        <div class="shot">
+          <span class="chip">After</span>
+          <img src="assets/after.jpg" alt="ご利用後：カフェでパンを前に満面の笑みを浮かべる瑛里奈様">
+        </div>
+        <figcaption>
+          <h3>ご利用後</h3>
+          <p>予定のない午後。焼きたてのパンを前に、誰にも呼ばれず、誰にも急かされずに笑っている状態です。当施設は、この満面の笑みを一日分お約束いたします。</p>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="ba-note">※ 写真はいずれも実際のご利用者様（瑛里奈様）です。効果には個人差がございますが、本件に限っては差がございません。</p>
+  </div>
+</section>
+
+<!-- 一日の流れ -->
+<section id="day">
+  <div class="wrap">
+    <p class="eyebrow">A day at the facility</p>
+    <h2 class="sec">一日の流れ</h2>
+    <p class="sec-lead">お預かりから翌朝まで。菜々子様のご様子に合わせて、当日ゆるやかに進行いたします。</p>
+    <p class="note">
+      <svg class="icon"><use href="#i-info"></use></svg>
+      <span>下記のスケジュールはあくまで<strong>目安</strong>です。当日の菜々子様のご状況によって、各時間は<strong>前後いたします</strong>。順序が入れ替わること、まるごと飛ぶこと、逆に一時間居座ることも想定内です。予定どおりに進まないことを前提に設計されております。</span>
+    </p>
+    <ol class="tl">
+      <li>
+        <time>7:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-hands"></use></svg>菜々子様 お引き渡し</h3>
+          <p>7時から8時のあいだに、菜々子様をスタッフがお預かりいたします。以降、瑛里奈様は「お客様」となります。</p>
+        </div>
+      </li>
+      <li>
+        <time>8:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-bowl"></use></svg>離乳食 ＋ ミルク</h3>
+          <p>朝の離乳食とミルクをスタッフが対応いたします。汚れた衣類の洗濯まで含みます。</p>
+        </div>
+      </li>
+      <li>
+        <time>11:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-heart"></use></svg>授乳</h3>
+          <p>こちらのみ瑛里奈様にお願いいたします。所要時間以外は引き続きお休みください。</p>
+        </div>
+      </li>
+      <li>
+        <time>12:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-cutlery"></use></svg>ランチ（有明ガーデン）</h3>
+          <p>有明ガーデンにてお食事。デザートにクレープまたはアイスをセットでご提供いたします。お会計はすべて施設負担です。</p>
+        </div>
+      </li>
+      <li>
+        <time>14:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-bottle"></use></svg>ミルク</h3>
+          <p>スタッフ対応。瑛里奈様は引き続き自由行動です。</p>
+        </div>
+      </li>
+      <li>
+        <time>15:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-stroller"></use></svg>お散歩</h3>
+          <p>午前または午後のいずれかでお散歩へ。有明ガーデン、カフェ、共用スペースでの滞在を予定しております。行き先はその日の気分でお決めください。</p>
+        </div>
+      </li>
+      <li>
+        <time>17:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-heart"></use></svg>授乳</h3>
+          <p>夕方の授乳。前後の準備・片付けはスタッフが行います。</p>
+        </div>
+      </li>
+      <li>
+        <time>19:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-sushi"></use></svg>夕食（ベルクのお寿司）</h3>
+          <p>ベルクにてお寿司を調達し、ご自宅でごゆっくり。片付けまでスタッフが担当いたします。</p>
+        </div>
+      </li>
+      <li>
+        <time>20:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-heart"></use></svg>授乳</h3>
+          <p>就寝前の授乳。ここまでで本日の育児業務はほぼ終了です。</p>
+        </div>
+      </li>
+      <li class="is-key">
+        <time>21:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-heart"></use></svg>ご夫婦のお時間</h3>
+          <p>愛のボルテージがピークを超え、制御が効かなくなる時間帯です。当施設が本日いちばん力を入れている時間でもあります。所要時間は未定。中断・延長ともに可。スタッフの都合により、開始が前倒しになる場合がございます。</p>
+        </div>
+      </li>
+      <li>
+        <time>24:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-bottle"></use></svg>ミルク</h3>
+          <p>スタッフ対応。瑛里奈様は起きなくて結構です。</p>
+        </div>
+      </li>
+      <li>
+        <time>深夜</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-moon"></use></svg>夜間対応</h3>
+          <p>夜中はすべてミルクで対応いたします。瑛里奈様はリビングにてお一人でご就寝ください。呼ばれません。起こされません。朝まで一続きの睡眠を、当施設が保証いたします。</p>
+        </div>
+      </li>
+      <li>
+        <time>翌 7:00</time><span class="dot"></span>
+        <div class="body">
+          <h3><svg class="icon"><use href="#i-sun"></use></svg>ご退所</h3>
+          <p>施設は静かに閉鎖され、通常の日常へ戻ります。ご利用ありがとうございました。</p>
+        </div>
+      </li>
+    </ol>
+    <p class="fee-note" style="margin-top:32px">※ 記載の時刻はすべて目安であり、当日の状況により前後いたします。時間どおりに進んだ場合は、それはそれで菜々子様のご機嫌が良かったということでございます。</p>
+  </div>
+</section>
+
+<!-- お食事 -->
+<section id="meal">
+  <div class="wrap">
+    <p class="eyebrow">Meals</p>
+    <h2 class="sec">お食事</h2>
+    <p class="sec-lead">一日を通して、瑛里奈様は買い出しも片付けもなさいません。なお当施設に厨房はございませんので、すべて外で調達いたします。</p>
+    <div class="cards">
+      <div class="card">
+        <svg class="icon"><use href="#i-cutlery"></use></svg>
+        <span class="tagline">Lunch</span>
+        <h3>有明ガーデンでランチ</h3>
+        <p>お店は当日の気分で。メニューの左端の値段を見る必要はありません。お会計はすべて辰幸が負担いたします。</p>
+      </div>
+      <div class="card accent">
+        <svg class="icon"><use href="#i-crepe"></use></svg>
+        <span class="tagline">Dessert</span>
+        <h3>クレープ or アイス</h3>
+        <p>ランチにはデザートがセットで付きます。クレープかアイス、お好きな方を。「どっちも」も選択可能です。</p>
+      </div>
+      <div class="card">
+        <svg class="icon"><use href="#i-sushi"></use></svg>
+        <span class="tagline">Dinner</span>
+        <h3>ベルクのお寿司</h3>
+        <p>夕食はベルクでお寿司を調達し、ご自宅で。買い出しから片付けまでスタッフが担当します。追加でお好きなものがあれば同時に調達いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- おでかけ・特典 -->
+<section id="option">
+  <div class="wrap">
+    <p class="eyebrow">Outing &amp; Options</p>
+    <h2 class="sec">おでかけ・特典</h2>
+    <p class="sec-lead">行き先も、行かないという選択も、すべて瑛里奈様にお任せいたします。</p>
+    <div class="cards">
+      <div class="card">
+        <svg class="icon"><use href="#i-stroller"></use></svg>
+        <span class="tagline">Walk</span>
+        <h3>お散歩</h3>
+        <p>午前か午後のいずれかで。有明ガーデン、カフェ、共用スペースのいずれかへ。歩きたくない日は中止でも構いません。</p>
+      </div>
+      <div class="card">
+        <svg class="icon"><use href="#i-cup"></use></svg>
+        <span class="tagline">Stay</span>
+        <h3>カフェ・共用スペース滞在</h3>
+        <p>何もしない時間のための場所です。スマホを見ても、ぼんやりしても、寝てもかまいません。</p>
+      </div>
+      <div class="card accent">
+        <svg class="icon"><use href="#i-flower"></use></svg>
+        <span class="tagline">Option</span>
+        <h3>I feeling ご招待</h3>
+        <p>リラクゼーションのご利用券を進呈いたします。<strong>ご予約はご本人様にてお取りください。</strong>当日、施設長よりPayPayにて全額を送金いたします。行ってらっしゃいませ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ご利用料金 -->
+<section id="fee">
+  <div class="wrap">
+    <p class="eyebrow">Fee</p>
+    <h2 class="sec">ご利用料金</h2>
+    <p class="sec-lead">当施設に金銭のお支払いは一切発生いたしません。</p>
+    <div class="table-scroll">
+      <table class="fee">
+        <thead>
+          <tr><th>項目</th><th>ご負担額</th><th>備考</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>基本ケア料金（お預かり・夜間対応込）</td><td class="amt">¥0</td><td><small>施設長が負担</small></td></tr>
+          <tr><td>ランチ（有明ガーデン）</td><td class="amt">¥0</td><td><small>お店・金額の上限なし</small></td></tr>
+          <tr><td>デザート（クレープ／アイス）</td><td class="amt">¥0</td><td><small>ランチにセットで付帯</small></td></tr>
+          <tr><td>夕食（ベルクのお寿司）</td><td class="amt">¥0</td><td><small>買い出し・片付け込み</small></td></tr>
+          <tr><td>I feeling ご利用料</td><td class="amt">¥0</td><td><small>当日PayPayにて送金いたします</small></td></tr>
+        </tbody>
+        <tfoot>
+          <tr><th>ご請求額合計</th><td class="amt">¥0</td><td><small>税込・追加料金なし</small></td></tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="fee-note">※ お支払いいただくものは、審査に通過するだけの愛のみでございます。</p>
+  </div>
+</section>
+
+<!-- 申込フォーム -->
+<section id="apply-sec">
+  <div class="wrap" style="max-width:760px">
+    <div class="form-head">
+      <p class="eyebrow">Application</p>
+      <h2 class="sec">ご利用申込フォーム</h2>
+      <p>当施設は定員1名の完全審査制です。すべての設問にお答えいただき、施設長（辰幸）による厳正なる審査を経て、受付の可否を決定いたします。虚偽の回答は、たいてい見抜かれます。</p>
+    </div>
+
+    <form id="apply" novalidate>
+      <div class="q">
+        <span class="q-num">Applicant</span>
+        <p class="q-title">お申込者様のお名前</p>
+        <p class="q-sub">審査結果の宛名に使用いたします。</p>
+        <div class="field">
+          <label for="name">お名前</label>
+          <input type="text" id="name" placeholder="例：瑛里奈" autocomplete="off">
+        </div>
+      </div>
+
+      <div id="questions"></div>
+
+      <div class="q">
+        <span class="q-num">Free</span>
+        <p class="q-title">施設長へひとこと</p>
+        <p class="q-sub">任意です。ただし内容によっては審査に大きく影響します。</p>
+        <div class="field">
+          <label for="msg">メッセージ（任意）</label>
+          <textarea id="msg" placeholder="日頃思っていることなど、ご自由にどうぞ。"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="submit">審査に出す</button>
+      <p class="form-err" id="form-err" role="alert"></p>
+    </form>
+
+    <div id="result" aria-live="polite" style="margin-top:44px">
+      <div class="verdict">
+        <div class="verdict-head">
+          <div class="stamp" id="stamp"><div><span id="stamp-jp">受付</span><small id="stamp-en">Accepted</small></div></div>
+          <div class="vh">
+            <h3 id="verdict-title"></h3>
+            <p class="msg" id="verdict-msg"></p>
+          </div>
+        </div>
+        <div class="score-rail">
+          <div class="top">
+            <span class="lbl">Total love score</span>
+            <span class="val"><b id="score">0</b><i> / <span id="max">150</span></i></span>
+          </div>
+          <div class="meter"><i id="meter-bar" style="width:0%"></i></div>
+        </div>
+        <div class="remarks" id="remarks-wrap">
+          <h4>審査員所見</h4>
+          <ul id="remarks"></ul>
+        </div>
+        <button type="button" class="again" id="again">もう一度審査を受ける</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="brand">タツユキ産後ケア <span>Est. 2026</span></div>
+    <p>2026年9月20日（日）一日限りの開設　／　結婚記念日特別イベント<br>施設長・辰幸　（本施設は瑛里奈様専用です）</p>
+  </div>
+</footer>
+
+</div><!-- /#site -->
+
+<script>
+/* ============================================================
+   1. 審査設問
+   ============================================================ */
+var QUESTIONS = [
+  {
+    max: 30,
+    title: 'あなたは夫である辰幸を愛していますか。',
+    sub: '当施設の根幹に関わる設問です。配点30点。',
+    opts: [
+      { t:'愛してます', s:30 },
+      { t:'そこそこ愛してます', s:20, r:'「そこそこ」という語に、施設長がしばらく黙り込みました。' },
+      { t:'まあまあ好きです', s:12, r:'「好き」の前に「まあまあ」が付いた瞬間、施設長の手が止まりました。' },
+      { t:'普通くらいです', s:6, r:'愛の欄に「普通」と記入されたのは、当施設開設以来はじめてでございます。' },
+      { t:'ちょっと最近距離感感じてます', s:0, r:'距離感については、9月20日の21時以降に物理的な解決を試みる予定です。' }
+    ]
+  },
+  {
+    max: 20,
+    title: 'あなたは高校生のとき、辰幸さんと同じクラスになりました。<br>そのときに取るべきだった行動はどれですか。',
+    sub: '過去の行動を問う設問です。正解は複数ございます。',
+    opts: [
+      { t:'上目遣いで、辰幸さんをお昼ごはんに誘う', s:20 },
+      { t:'帰り道が一緒だから、上目遣いで「一緒に帰ろ」と提案する', s:20 },
+      { t:'辰幸さんに消しゴムを借りて、わざと返さない', s:11 },
+      { t:'特に何もしない', s:4, r:'「特に何もしない」を選んだ3年間で、辰幸は何度も自主的に遠回りをしていました。' },
+      { t:'とりあえずビンタしてみる', s:0, r:'ビンタは当施設の想定する青春の範囲を超えております。' }
+    ]
+  },
+  {
+    max: 20,
+    title: '大学生のとき、あなたは辰幸さんと同じサークルでした。<br>合宿に行ったとき、取るべきだった行動はどれですか。',
+    sub: '合宿という限られた機会をどう活かすかが問われます。',
+    opts: [
+      { t:'偶然を装って二人きりになり、さりげなくボディタッチをする', s:20 },
+      { t:'不意打ちで、ほっぺたにキス、もしくはハグをする', s:20 },
+      { t:'荷物持ち係をさせる', s:8, r:'荷物は喜んで持ちますが、それだけで合宿が終わったのは痛恨でございます。' },
+      { t:'背負い投げをする', s:0, r:'背負い投げは合宿の思い出として不適切と判断されました。' }
+    ]
+  },
+  {
+    max: 20,
+    title: '告白の場面です。<br>本来あるべきだった正しい告白はどれですか。',
+    sub: '当施設は、この設問の配点を近年見直しました。',
+    opts: [
+      { t:'帰ろうとする辰幸の服をくいっと引っ張り、上目遣いで「もう帰るの？」と言い、指をちょんちょんしながら「付き合いたいな」と伝える', s:20 },
+      { t:'お台場海浜公園のビーチで夜、ロマンチックな雰囲気のなか辰幸から告白され、OKする', s:7, r:'従来版の告白は、雰囲気は満点ですが「辰幸から」だった点が減点対象です。' },
+      { t:'LINEで「付き合う？」とだけ送る', s:3, r:'既読は3秒で付いたと記録に残っております。' },
+      { t:'告白されたが、3日ほど返事を保留する', s:0, r:'その3日間、辰幸は一睡もしておりません。' }
+    ]
+  },
+  {
+    max: 15,
+    title: '辰幸が世界でいちばん好きなものは、何だと思いますか。',
+    sub: '施設長の内面に関する設問です。正解はひとつしかございません。',
+    opts: [
+      { t:'えりなとななこ', s:15 },
+      { t:'ゲーム', s:5, r:'ゲームは世界で2番目でございます。1番ではございません。念のため申し添えます。' },
+      { t:'発売日に買う新作ゲーム', s:2, r:'新作は発売日に買いますが、起動する前に菜々子様が起きます。' },
+      { t:'誰にも邪魔されずゲームをしている時間', s:0, r:'その回答をなさる方に、菜々子様をお預けするわけには参りません。' }
+    ]
+  },
+  {
+    max: 15,
+    title: '9月20日の朝、辰幸がまだ寝ています。<br>あなたの行動は。',
+    sub: '施設長の起床時の対応についてお伺いします。',
+    opts: [
+      { t:'そっと「おはよう」のキスをして起こす', s:15 },
+      { t:'毛布をかけ直して、もう少し寝かせてあげる', s:12 },
+      { t:'そのままにして、先に朝ごはんを食べる', s:6 },
+      { t:'布団を思いきり剥ぎ取る', s:0, r:'掛け布団の強制解除は、当施設の安全基準に抵触いたします。' }
+    ]
+  },
+  {
+    max: 15,
+    title: '辰幸に「今日かわいいね」と言われました。<br>あなたの返答は。',
+    sub: '日常における相互評価についての設問です。',
+    opts: [
+      { t:'「辰幸もかっこいいよ」と返す', s:15 },
+      { t:'照れて何も言えなくなる', s:12 },
+      { t:'「どうしたの急に」と聞き返す', s:6 },
+      { t:'無言でスマホを見る', s:0, r:'スマホの画面が、施設長の顔よりも優先された記録が残っております。' }
+    ]
+  },
+  {
+    max: 15,
+    title: '菜々子様を、丸一日辰幸に預けることについて。<br>今のお気持ちに最も近いものは。',
+    sub: '当施設への信頼度を測る設問です。',
+    opts: [
+      { t:'世界でいちばん安心して任せられる', s:15 },
+      { t:'ちょっと心配だけど、信じてる', s:11 },
+      { t:'正直不安なので、30分おきに連絡する', s:5, r:'30分おきのご連絡は、スタッフの片手が常に塞がる結果となります。' },
+      { t:'リビングに監視カメラを設置する', s:0, r:'当施設は監視下での運営を想定しておりません。' }
+    ]
+  },
+  {
+    max: 15,
+    title: '来年の結婚記念日は、どのように過ごしたいですか。',
+    sub: '最後の設問です。次回開設の参考にいたします。',
+    opts: [
+      { t:'辰幸と二人きりで過ごしたい', s:15 },
+      { t:'家族みんなでどこかへ出かけたい', s:11 },
+      { t:'そのとき考える', s:5 },
+      { t:'結婚記念日っていつだっけ', s:0, r:'9月20日でございます。念のため、来年もこのページをお送りいたします。' }
+    ]
+  }
+];
+var MAX = QUESTIONS.reduce(function(a,q){ return a + q.max; }, 0);
+document.getElementById('max').textContent = MAX;
+
+/* ============================================================
+   2. 設問の描画
+   ============================================================ */
+(function(){
+  var host = document.getElementById('questions');
+  host.innerHTML = QUESTIONS.map(function(q, qi){
+    var opts = q.opts.map(function(o, oi){
+      return '<label class="opt">'
+           +   '<input type="radio" name="q' + qi + '" value="' + oi + '">'
+           +   '<span class="tick" aria-hidden="true"></span>'
+           +   '<span class="txt">' + o.t + '</span>'
+           + '</label>';
+    }).join('');
+    return '<div class="q" data-q="' + qi + '">'
+         +   '<span class="q-num">Question ' + String(qi + 1).padStart(2,'0') + '</span>'
+         +   '<p class="q-title">' + q.title + '</p>'
+         +   '<p class="q-sub">' + q.sub + '</p>'
+         +   '<div class="opts">' + opts + '</div>'
+         + '</div>';
+  }).join('');
+})();
+
+/* ============================================================
+   3. 判定
+   ============================================================ */
+var TIERS = [
+  {
+    at: 1.00, jp:'特別受付', en:'Perfect',
+    title:'審査の必要すら、ありませんでした。',
+    msg:'全設問において最上位の回答を確認いたしました。満点でございます。当施設は本日をもって「愛は測定可能である」という結論に至りました。9月20日、最上級のケアをもってお迎えいたします。なお満点特典として、21時からの時間帯が延長されます。'
+  },
+  {
+    at: .88, jp:'受付', en:'Accepted',
+    title:'厳正なる審査の結果、あなたの辰幸への溢れる愛を確認することができました。',
+    msg:'タツユキ産後ケアの申込を受け付けます。9月20日、朝7時より施設を開設いたします。当日は何も持たず、何も考えず、手ぶらでお越しください。あとはすべてこちらで整えております。'
+  },
+  {
+    at: .70, jp:'受付', en:'Accepted',
+    title:'厳正なる審査の結果、辰幸への愛は基準値を満たしていると判断されました。',
+    msg:'申込を受け付けます。ただし審査の過程で、施設長が数回「えっ」と声を漏らす場面がございました。当日、口頭にて補足説明をお願いいたします。補足説明の場所と時間は、21時、リビングを予定しております。'
+  },
+  {
+    at: .48, jp:'保留', en:'Pending',
+    title:'審査結果 — 保留。愛は、あります。ありますが。',
+    msg:'書類の端々から「まあ、いるよね、夫」という気配が漂っております。当施設は愛を燃料に稼働しているため、この残量では夜間対応の途中で施設長が力尽きる可能性がございます。再審査をご希望の場合は、辰幸を3秒以上まっすぐ見つめてから、もう一度ご記入ください。'
+  },
+  {
+    at: .24, jp:'不受理', en:'Rejected',
+    title:'厳正なる審査をするまでもなく、申込は受け付けません。',
+    msg:'当施設は愛を燃料に稼働しております。この燃料残量でのご利用は、スタッフ（辰幸）の心が持ちません。9月20日の開設は、いったん見送らせていただきます。……というのは建前で、本当は少し傷ついております。もう一度、答え直していただけませんか。'
+  },
+  {
+    at: 0, jp:'別人', en:'Impostor',
+    title:'……あなた、瑛里奈様のそっくりさんですね？',
+    msg:'本物の瑛里奈様が、この回答をなさるはずがございません。顔立ちも筆跡もよく似ていらっしゃいますが、回答内容が決定的に別人でございます。そっくりさんのお申し込みは受け付けておりません。恐れ入りますが、本物の瑛里奈様をお呼びいただけますでしょうか。お待ちしております。'
+  }
+];
+
+(function(){
+  var form   = document.getElementById('apply');
+  var errEl  = document.getElementById('form-err');
+  var result = document.getElementById('result');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    var picks = [], missing = null;
+    for(var i = 0; i < QUESTIONS.length; i++){
+      var sel = form.querySelector('input[name="q' + i + '"]:checked');
+      if(!sel){ missing = i; break; }
+      picks.push(QUESTIONS[i].opts[+sel.value]);
+    }
+    if(missing !== null){
+      errEl.textContent = '設問' + String(missing + 1).padStart(2,'0') + ' が未回答です。審査は全問回答が条件でございます。';
+      var target = form.querySelector('[data-q="' + missing + '"]');
+      if(target) target.scrollIntoView({ behavior:'smooth', block:'center' });
+      return;
+    }
+    errEl.textContent = '';
+
+    var score = picks.reduce(function(a,o){ return a + o.s; }, 0);
+    var name  = (document.getElementById('name').value || '').trim();
+    var honor = name ? name + '様' : 'お客様';
+
+    var tier = TIERS.find(function(t){ return score >= Math.round(t.at * MAX); });
+
+    document.getElementById('stamp-jp').textContent  = tier.jp;
+    document.getElementById('stamp-en').textContent  = tier.en;
+    document.getElementById('verdict-title').textContent = honor + '。' + tier.title;
+    document.getElementById('verdict-msg').textContent   = tier.msg;
+    document.getElementById('score').textContent = score;
+
+    var remarks = picks.filter(function(o){ return o.r; }).map(function(o){ return o.r; });
+    var msg = (document.getElementById('msg').value || '').trim();
+    if(msg) remarks.push('メッセージ欄の記載を確認いたしました。施設長が読み返した回数は、本日中に二桁に達する見込みです。');
+    if(score === MAX) remarks.push('減点対象はひとつもございませんでした。審査員は現在、席を外しております。');
+    else if(!remarks.length) remarks.push('大きな減点はございませんが、満点にはわずかに届きませんでした。惜しい箇所は当日ご本人にお伝えいたします。');
+
+    var wrap = document.getElementById('remarks-wrap');
+    wrap.style.display = '';
+    document.getElementById('remarks').innerHTML = remarks.map(function(r){
+      return '<li>' + r + '</li>';
+    }).join('');
+
+    result.classList.add('show');
+    result.scrollIntoView({ behavior:'smooth', block:'start' });
+    setTimeout(function(){
+      document.getElementById('meter-bar').style.width = Math.round(score / MAX * 100) + '%';
+    }, 120);
+  });
+
+  document.getElementById('again').addEventListener('click', function(){
+    form.reset();
+    result.classList.remove('show');
+    document.getElementById('meter-bar').style.width = '0%';
+    document.getElementById('apply-sec').scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+})();
+</script>
+</body>
+</html>

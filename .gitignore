@@ -1,0 +1,7 @@
+# 平文の写真はリポジトリに入れない（暗号化して index.html に埋め込む）
+assets/
+
+# Artifact 用の平文ビルド
+dist/
+
+.DS_Store

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>タツユキ産後ケア</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Zen+Kaku+Gothic+New:wght@400;500&family=Jost:wght@300;400&display=swap">
+<style>
+:root{
+  --paper:#F6F2ED; --paper-2:#FDFBF8; --ink:#332C29; --ink-2:#6B605A; --ink-3:#9C9089;
+  --rose:#C2848C; --rule:#DED5CC; --vermilion:#B5423A;
+  --mincho:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --gothic:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --latin:"Jost","Hiragino Sans",sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#211D1B; --paper-2:#2A2523; --ink:#EDE5DE; --ink-2:#B7ABA3; --ink-3:#8B807A;
+    --rose:#DC9EA5; --rule:#453D39; --vermilion:#E0685C; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#211D1B; --paper-2:#2A2523; --ink:#EDE5DE; --ink-2:#B7ABA3; --ink-3:#8B807A;
+  --rose:#DC9EA5; --rule:#453D39; --vermilion:#E0685C; color-scheme:dark;
+}
+*,*::before,*::after{ box-sizing:border-box; }
+body{
+  margin:0; min-height:100dvh; display:grid; place-items:center; padding:24px;
+  background:var(--paper); color:var(--ink); font-family:var(--gothic); line-height:1.9;
+}
+.card{ width:min(100%,392px); text-align:center; }
+.mark{ color:var(--rose); margin-bottom:22px; }
+h1{ font-family:var(--mincho); font-weight:600; font-size:21px; letter-spacing:.14em; margin:0 0 6px; }
+.lead{ color:var(--ink-2); font-size:13px; margin:0 0 26px; letter-spacing:.04em; }
+form{ display:flex; flex-direction:column; gap:12px; }
+input{
+  font-family:var(--latin); font-size:16px; letter-spacing:.24em; text-align:center;
+  padding:13px 14px; border:1px solid var(--rule); border-radius:2px;
+  background:var(--paper-2); color:var(--ink);
+}
+input::placeholder{ letter-spacing:.1em; color:var(--ink-3); }
+button{
+  font-family:var(--gothic); font-weight:500; font-size:14px; letter-spacing:.14em;
+  padding:13px; border:0; border-radius:2px; cursor:pointer; background:var(--ink); color:var(--paper);
+}
+button:hover:not(:disabled){ background:var(--rose); }
+button:disabled{ opacity:.55; cursor:default; }
+.msg{ font-size:12.5px; min-height:1.7em; margin:14px 0 0; letter-spacing:.04em; color:var(--vermilion); }
+.msg.working{ color:var(--ink-3); }
+:focus-visible{ outline:2px solid var(--rose); outline-offset:3px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="mark">
+    <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="8" cy="8" r="4.6"/><path d="M11.3 11.3 20 20M17 17l-2.2 2.2M19.4 14.6 17.2 16.8"/>
+    </svg>
+  </div>
+  <h1>ご利用者様専用ページ</h1>
+  <p class="lead">合言葉をご入力ください</p>
+  <form id="f">
+    <input type="password" id="pw" placeholder="password" autocomplete="current-password" aria-label="合言葉">
+    <button type="submit" id="go">入館する</button>
+  </form>
+  <p class="msg" id="msg" role="status"></p>
+</div>
+
+<script id="payload" type="application/octet-stream">__PAYLOAD__</script>
+<script>
+(function(){
+  var ITER = __ITER__, KEY = 'tsc-pw';
+  var f = document.getElementById('f'), pw = document.getElementById('pw');
+  var go = document.getElementById('go'), msg = document.getElementById('msg');
+
+  function bytes(b64){
+    var bin = atob(b64), out = new Uint8Array(bin.length);
+    for(var i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+
+  async function unlock(pass){
+    var blob = bytes(document.getElementById('payload').textContent.trim());
+    var salt = blob.slice(0, 16), iv = blob.slice(16, 28), body = blob.slice(28);
+    var base = await crypto.subtle.importKey('raw', new TextEncoder().encode(pass), 'PBKDF2', false, ['deriveKey']);
+    var key  = await crypto.subtle.deriveKey(
+      { name:'PBKDF2', salt:salt, iterations:ITER, hash:'SHA-256' },
+      base, { name:'AES-GCM', length:256 }, false, ['decrypt']);
+    var plain = await crypto.subtle.decrypt({ name:'AES-GCM', iv:iv }, key, body);
+    return new TextDecoder().decode(plain);
+  }
+
+  function show(html){
+    try{ document.open(); document.write(html); document.close(); }
+    catch(e){ document.documentElement.innerHTML = html; }
+  }
+
+  async function attempt(pass, silent){
+    if(!pass) return false;
+    go.disabled = true;
+    msg.className = 'msg working';
+    msg.textContent = '解錠しています…';
+    try{
+      var html = await unlock(pass);
+      try{ localStorage.setItem(KEY, pass); }catch(e){}
+      show(html);
+      return true;
+    }catch(e){
+      go.disabled = false;
+      msg.className = 'msg';
+      if(!crypto.subtle){
+        msg.textContent = 'この環境では解錠できません。https:// で開いてください。';
+      }else{
+        msg.textContent = silent ? '' : '合言葉が違います。ヒント：夫がいちばん言われたい9文字。';
+        if(silent){ try{ localStorage.removeItem(KEY); }catch(e){} }
+        else pw.select();
+      }
+      return false;
+    }
+  }
+
+  f.addEventListener('submit', function(e){ e.preventDefault(); attempt(pw.value.trim(), false); });
+
+  var saved = null;
+  try{ saved = localStorage.getItem(KEY); }catch(e){}
+  if(saved) attempt(saved, true);
+})();
+</script>
+</body>
+</html>
